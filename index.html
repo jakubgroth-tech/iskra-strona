@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISKRA — Custom Grillz & Things</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#080809',
+                        cardDark: '#111215',
+                        borderMetallic: '#222328',
+                        silverLight: '#f8fafc',
+                        silverMid: '#cbd5e1',
+                        silverDark: '#64748b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Syne & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #080809;
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Syne', sans-serif;
+        }
+
+        /* Liquid Chrome Metallic Text Effect */
+        .text-silver-chrome {
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 45%, #94a3b8 75%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-silver-glow {
+            text-shadow: 0 0 40px rgba(226, 232, 240, 0.2);
+        }
+
+        /* Dark Luxury Cards with Metallic Borders */
+        .luxury-card {
+            background: rgba(17, 18, 21, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid #222328;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .luxury-card:hover {
+            border-color: rgba(226, 232, 240, 0.35);
+            transform: translateY(-2px);
+        }
+
+        /* Main Chrome Button */
+        .btn-silver-main {
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
+            color: #080809;
+            transition: all 0.3s ease;
+        }
+
+        .btn-silver-main:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%);
+            box-shadow: 0 0 30px rgba(248, 250, 252, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Ambient Ambient Glow Background */
+        .ambient-glow {
+            background: radial-gradient(circle at 50% 25%, rgba(226, 232, 240, 0.04) 0%, rgba(8, 8, 9, 0) 70%);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between selection:bg-slate-200 selection:text-black">
+
+    <!-- Ambient Silver Light Effect Background -->
+    <div class="fixed inset-0 pointer-events-none ambient-glow z-0"></div>
+
+    <!-- 1. NAGŁÓWEK / TOP BAR -->
+    <header class="relative z-20 w-full border-b border-borderMetallic/70 bg-brandDark/90 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            
+            <!-- Logo Sygnet w Nagłówku -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-full bg-cardDark border border-borderMetallic flex items-center justify-center group-hover:border-slate-300 transition-colors">
+                    <i data-lucide="zap" class="w-4 h-4 text-slate-200 fill-slate-200/20 group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-extrabold text-xl tracking-widest text-silver-chrome">ISKRA</span>
+                    <span class="text-[8px] uppercase tracking-[0.25em] text-slate-400 font-semibold -mt-1">Custom Grillz & Things</span>
+                </div>
+            </a>
+
+            <!-- Social Links / DM -->
+            <div class="flex items-center gap-5 text-xs uppercase tracking-widest font-medium text-slate-400">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-borderMetallic bg-cardDark/50 text-slate-200 hover:text-white hover:border-slate-400 transition-all">
+                    <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+                    <span>@iskra_grills</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- 2. GŁÓWNA SEKCJA HERO -->
+    <main class="relative z-10 flex-grow flex items-center justify-center py-16 px-6">
+        <div class="max-w-4xl w-full mx-auto text-center space-y-10">
+            
+            <!-- Tag Badga -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-borderMetallic bg-cardDark/60 text-[10px] uppercase tracking-[0.25em] text-slate-300">
+                <span class="w-2 h-2 rounded-full bg-slate-100 animate-pulse"></span>
+                <span>Silver 925 • Bespoke & Limited Drops</span>
+            </div>
+
+            <!-- ================================================================= -->
+            <!-- DEDYKOWANE MIEJSCE NA LOGO (ID: brand-logo) -->
+            <!-- ================================================================= -->
+            <div class="relative py-2 flex justify-center">
+                <div id="brand-logo" class="relative group cursor-pointer">
+                    <!-- Rozmyta poświata srebra za logo -->
+                    <div class="absolute -inset-6 bg-slate-300/10 rounded-full blur-2xl group-hover:bg-slate-200/20 transition-all duration-500"></div>
+                    
+                    <!-- Kontener przygotowany na Twoje logo -->
+                    <div class="relative w-40 h-40 sm:w-48 sm:h-48 rounded-3xl luxury-card flex flex-col items-center justify-center p-6 shadow-2xl transition-transform duration-500 group-hover:scale-105">
+                        
+                        <!-- Domyślna reprezentacja tymczasowa -->
+                        <i data-lucide="sparkles" class="w-14 h-14 text-slate-100 stroke-[1.25] mb-2 group-hover:rotate-12 transition-transform duration-500"></i>
+                        <span class="font-display font-black text-3xl tracking-widest text-silver-chrome">ISKRA</span>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-slate-400 mt-1 font-semibold">Grillz & Things</span>
+
+                        <!-- 
+                            ========================================================
+                            TUTAJ WKLEIMY TWOJE GRAFICZNE LOGO (PO PRZESŁANIU PLIKU):
+                            Zastąpimy powyższy kod jedną linijką:
+                            <img src="logo.svg" alt="ISKRA Logo" class="w-full h-full object-contain">
+                            ========================================================
+                        -->
+                    </div>
+                </div>
+            </div>
+            <!-- ================================================================= -->
+
+            <!-- Nagłówek i Pozycjonowanie Marki -->
+            <div class="space-y-4">
+                <h1 class="font-display text-4xl sm:text-7xl font-black tracking-tight text-white uppercase leading-none">
+                    ISKRA <br>
+                    <span class="text-silver-chrome text-silver-glow text-3xl sm:text-5xl font-extrabold block mt-2">CUSTOM GRILLZ & THINGS</span>
+                </h1>
+                
+                <p class="max-w-2xl mx-auto text-slate-400 text-sm sm:text-base leading-relaxed font-light pt-2">
+                    Niezależna marka jubilerska tworząca bezkompromisowe nakładki na zęby (Custom Grillz) oraz limitowaną biżuterię ze srebra próby 925 — sygnety, wisiorki i obiekty autorskie.
+                </p>
+            </div>
+
+            <!-- Przycisk Główny (CTA) -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto btn-silver-main px-9 py-4 rounded-xl font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span>Napisz w sprawie projektu (DM)</span>
+                </a>
+            </div>
+
+            <!-- Visual Banner Visual Placeholder (Prestiż Grillzów & Vibe Marki) -->
+            <div class="pt-8">
+                <div class="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden border border-borderMetallic luxury-card flex items-center justify-center">
+                    <!-- Tło z gradientem imitujące surowe srebro / błysk -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 opacity-90"></div>
+                    
+                    <div class="relative z-10 text-center px-6 space-y-2">
+                        <span class="text-xs uppercase tracking-[0.3em] text-slate-400 font-semibold block">Halo Craft & Prestige</span>
+                        <h3 class="font-display text-xl sm:text-2xl font-bold text-slate-200">Bespoke 1-of-1 Custom Grillz</h3>
+                        <p class="text-xs text-slate-400 font-light max-w-md mx-auto">Odlewy woskowe, idealna anatomia, wykończenia Deep Cut i Diamond Dust dla środowiska artystycznego.</p>
+                    </div>
+
+                    <!-- 
+                        Gdy będziemy mieć zdjęcie grillza na zębach rapera/artysty, wkleimy tutaj:
+                        <img src="hero-grillz.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40">
+                    -->
+                </div>
+            </div>
+
+            <!-- 3 FILARY MARKI (GRILLZ + POWIELALNE JEWELRY + COLLABS) -->
+            <div class="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-5 text-left">
+                
+                <!-- Filar 1: Halo Craft (Grillz) -->
+                <div class="p-6 rounded-2xl luxury-card space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">01 / Prestiż</span>
+                        <i data-lucide="sparkle" class="w-4 h-4 text-slate-300"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-slate-100 font-display">Custom Grillz</h4>
+                        <p class="text-xs text-slate-400 font-light mt-1 leading-relaxed">
+                            Bespoke 1-of-1. Indywidualny wycisk lub skan 3D, perfekcyjne dopasowanie do zębów.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Filar 2: Powielalna Biżuteria (Things) -->
+                <div class="p-6 rounded-2xl luxury-card space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">02 / Powielalne</span>
+                        <i data-lucide="gem" class="w-4 h-4 text-slate-300"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-slate-100 font-display">Sygnety & Wisiorki</h4>
+                        <p class="text-xs text-slate-400 font-light mt-1 leading-relaxed">
+                            Czyste Srebro 925. Powielalne wzory autorskie gotowe do szybkiej sprzedaży online.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Filar 3: Collab Drops -->
+                <div class="p-6 rounded-2xl luxury-card space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">03 / Współprace</span>
+                        <i data-lucide="layers" class="w-4 h-4 text-slate-300"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-slate-100 font-display">Artist Drops</h4>
+                        <p class="text-xs text-slate-400 font-light mt-1 leading-relaxed">
+                            Limitowane serie zawieszek i gadżetów we współpracy ze sceną muzyczną i artystyczną.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 3. STOPKA -->
+    <footer class="relative z-10 w-full border-t border-borderMetallic/70 py-8 bg-brandDark">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div class="flex items-center gap-2">
+                <span class="font-display font-bold text-slate-300 tracking-wider">ISKRA</span>
+                <span>&copy; <span id="year"></span>. Custom Grillz & Things.</span>
+            </div>
+            <div class="flex items-center gap-6 text-[11px] uppercase tracking-widest">
+                <a href="https://instagram.com" target="_blank" class="hover:text-slate-200 transition-colors">Instagram</a>
+                <a href="mailto:kontakt@iskragrillz.pl" class="hover:text-slate-200 transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inicjalizacja ikon Lucide
+        lucide.createIcons();
+
+        // Rok w stopce
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
