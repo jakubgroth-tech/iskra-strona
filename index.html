@@ -38,10 +38,7 @@
             background-color: #0a0a0b;
             color: #e2e8f0;
         }
-        .silver-glow {
-            box-shadow: 0 0 50px -10px rgba(255, 255, 255, 0.12);
-        }
-        /* Konwersja czarnego logo z białym tłem na czystą biel bez białej ramki */
+        /* Efekt wycięcia białego tła i konwersji czarnego logo w jasne srebro */
         .logo-blend {
             filter: invert(1) brightness(1.8);
             mix-blend-mode: screen;
@@ -53,61 +50,60 @@
     <!-- NAWIGACJA -->
     <header class="w-full border-b border-brand-border/60 bg-brand-bg/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Logo w nawigacji -->
+            <!-- Małe białe logo w nawigacji -->
             <a href="#" class="flex items-center gap-2 group">
                 <img src="ISKRA_LOGO.png" alt="ISKRA Logo" class="h-8 md:h-9 w-auto logo-blend group-hover:opacity-80 transition-opacity">
             </a>
             
+            <!-- Odnośniki sekcji -->
             <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-zinc-400 font-medium">
                 <a href="#grillz" class="hover:text-white transition-colors">01 / Custom Grillz</a>
                 <a href="#things" class="hover:text-white transition-colors">02 / Things</a>
                 <a href="#drops" class="hover:text-white transition-colors">03 / Drops</a>
             </nav>
 
-            <a href="#kontakt" class="text-xs uppercase tracking-wider font-semibold border border-brand-border px-4 py-2.5 rounded-full hover:bg-white hover:text-black transition-all">
-                Kontakt / Custom
+            <!-- Przycisk Kontakt -->
+            <a href="#kontakt" class="text-xs uppercase tracking-wider font-semibold border border-brand-border px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition-all">
+                Kontakt
             </a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <main class="flex-1 flex flex-col justify-center items-center px-6 py-20 text-center relative overflow-hidden">
-        <!-- Tło z subtelnym blaskiem -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+    <main class="flex-1 flex flex-col justify-center items-center px-6 py-24 text-center relative overflow-hidden">
+        <!-- Subtelne źródło światła w tle -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
+        <div class="max-w-3xl mx-auto relative z-10 flex flex-col items-center">
             
-            <!-- GŁÓWNE LOGO MARKI -->
-            <div class="mb-8 p-6 rounded-2xl border border-brand-border/40 bg-brand-card/40 backdrop-blur-sm silver-glow">
-                <img src="ISKRA_LOGO.png" alt="ISKRA — Custom Grillz & Things" class="h-16 sm:h-24 md:h-32 lg:h-36 w-auto logo-blend drop-shadow-[0_0_35px_rgba(255,255,255,0.2)]">
-            </div>
-
-            <!-- Podtytuł i opis -->
-            <p class="text-xs sm:text-sm uppercase tracking-[0.3em] text-zinc-400 mb-6 font-semibold">
+            <!-- Mały podtytuł -->
+            <p class="text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 mb-6 font-semibold">
                 Custom Grillz & Jewelry Design
             </p>
 
-            <h1 class="font-display text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-2xl mb-6">
-                Sztuka na zamówienie oraz selekcjonowane edycje limitowane.
+            <!-- Główny nagłówek -->
+            <h1 class="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.15] max-w-2xl mb-8">
+                Szlachetny metal, cyfrowa precyzja i ręczny kunszt.
             </h1>
 
-            <p class="text-zinc-400 text-sm md:text-base max-w-xl mb-10 leading-relaxed">
-                Ręcznie tworzone jubilerskie nakładki na zęby (1-of-1), autorskie sygnety, wisiorki oraz unikalne kolaboracje z artystami.
+            <!-- Główny opis (2-3 tajemnicze, jakościowe zdania) -->
+            <p class="text-zinc-400 text-sm md:text-base max-w-xl mb-12 leading-relaxed">
+                Tworzymy ze srebra obiekty z wyrazistym charakterem — od jednostkowych nakładek na zęby po autorskie formy biżuteryjne. Każdy projekt przechodzi drogę od cyfrowej koncepcji do ręcznego, jubilerskiego dopracowania w metalu. Tworzymy rzeczy unikalne. Dokładnie tak, jak chcesz.
             </p>
 
             <!-- Przyciski akcji -->
             <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <a href="#kontakt" class="bg-white text-black text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-zinc-200 transition-all text-center">
-                    Zamów projekt Custom
+                    Stwórz własny projekt
                 </a>
                 <a href="#things" class="border border-brand-border text-white text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white/5 transition-all text-center">
-                    Zobacz kolekcję Things
+                    Poznaj kolekcję
                 </a>
             </div>
         </div>
 
-        <!-- SEKCJA KATEGORII -->
-        <div class="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-28 text-left">
+        <!-- SEKCJA KATEGORII (Czeka na Waszą kolejną decyzję) -->
+        <div class="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-32 text-left">
             <div id="grillz" class="p-6 rounded-xl border border-brand-border bg-brand-card/30 hover:border-zinc-500 transition-all">
                 <span class="text-xs font-mono text-zinc-500">01 / VISUAL IDENTITY</span>
                 <h3 class="font-display text-lg font-bold text-white mt-2 mb-2">Custom Grillz</h3>
