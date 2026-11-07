@@ -69,12 +69,12 @@
         </div>
     </header>
 
-    <!-- HERO SECTION Z GIGANTYCZNYM SYMBOLEM W TLE -->
+    <!-- HERO SECTION Z DYNAMICZNYM SYMBOLEM W TLE -->
     <main class="flex-1 flex flex-col justify-center items-center px-6 py-28 text-center relative overflow-hidden">
         
-        <!-- OGROMNA PRZEZROCZYSTA ISKRA W TLE HERO -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[700px] md:w-[900px] aspect-square pointer-events-none select-none opacity-[0.07] z-0 flex items-center justify-center">
-            <img src="icon.png" alt="" class="w-full h-full object-contain logo-blend transform -rotate-6">
+        <!-- OGROMNY SYMBOL W TLE (KONTENER I IKONA) -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[700px] md:w-[900px] aspect-square pointer-events-none select-none opacity-[0.08] z-0 flex items-center justify-center">
+            <img id="spark-bg" src="icon.png" alt="" class="w-full h-full object-contain logo-blend transform -rotate-6">
         </div>
 
         <!-- Subtelna poświata świetlna w tle -->
@@ -126,7 +126,7 @@
                 </p>
             </div>
 
-            <div id="drops" class="p-6 rounded-xl border border-brand-border bg-brand-card/30 backdrop-blur-sm hover:border-zinc-500 transition-all">
+            <div id="drops" class="p-6 rounded-xl border border-brand-border bg-brand-card/30 hover:border-zinc-500 transition-all">
                 <span class="text-xs font-mono text-zinc-500">03 / SPECIAL PROJECTS</span>
                 <h3 class="font-display text-lg font-bold text-white mt-2 mb-2">Artist Collaborations</h3>
                 <p class="text-xs text-zinc-400 leading-relaxed">
@@ -149,6 +149,48 @@
             </div>
         </div>
     </footer>
+
+    <!-- SKRYPT PARALLAX (RUCH MYSZY I SCROLL) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const spark = document.getElementById('spark-bg');
+            if (!spark) return;
+
+            let mouseX = 0, mouseY = 0;
+            let currentX = 0, currentY = 0;
+            let scrollY = 0;
+
+            // Śledzenie pozycji kursora
+            window.addEventListener('mousemove', (e) => {
+                const cx = window.innerWidth / 2;
+                const cy = window.innerHeight / 2;
+                mouseX = ((e.clientX - cx) / cx) * 30; // Max wychylenie 30px
+                mouseY = ((e.clientY - cy) / cy) * 30;
+            });
+
+            // Śledzenie scrollowania
+            window.addEventListener('scroll', () => {
+                scrollY = window.scrollY;
+            });
+
+            // Pętla animacyjna (Ultra Smooth LERP)
+            function animate() {
+                // Płynne dążenie do pozycji myszy
+                currentX += (mouseX - currentX) * 0.05;
+                currentY += (mouseY - currentY) * 0.05;
+
+                // Przesunięcie i obrót na scroll
+                const scrollOffset = scrollY * 0.15;
+                const scrollRotation = scrollY * 0.02;
+
+                spark.style.transform = `translate3d(${currentX}px, ${currentY + scrollOffset}px, 0) rotate(${-6 + scrollRotation}deg)`;
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        });
+    </script>
 
 </body>
 </html>
