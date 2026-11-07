@@ -86,9 +86,10 @@
     <!-- HERO SECTION Z DYNAMICZNYM SYMBOLEM W TLE -->
     <main class="flex-1 flex flex-col justify-center items-center px-6 py-28 text-center relative overflow-hidden">
         
-        <!-- OGROMNY SYMBOL W TLE (W PEŁNI WYŚRODKOWANY KONTENER) -->
+        <!-- SZTYWNO WYŚRODKOWANY KONTENER DLA SYMBOLE W TLE -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[700px] md:w-[900px] aspect-square pointer-events-none select-none opacity-[0.08] z-0 flex items-center justify-center">
-            <img id="spark-bg" src="icon.png" alt="" class="w-full h-full object-contain logo-blend">
+            <!-- OBRAZEK ANIMOWANY WEWNĄTRZ STALE WYŚRODKOWANEGO KONTENERA -->
+            <img id="spark-bg" src="icon.png" alt="" class="w-full h-full object-contain logo-blend transform -rotate-6">
         </div>
 
         <!-- Subtelna poświata świetlna w tle -->
@@ -200,75 +201,4 @@
                     <img src="images-14.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
                 </div>
                 <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
-                    <img src="images-13.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
-                </div>
-                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
-                    <img src="images-12.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
-                </div>
-
-                <!-- ZESTAW 3 (DUPLIKAT DLA SZEROKICH EKRANÓW) -->
-                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
-                    <img src="images-9.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
-                </div>
-                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
-                    <img src="images-10.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
-                </div>
-                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
-                    <img src="images-11.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
-                </div>
-                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
-                    <img src="images-14.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
-                </div>
-                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
-                    <img src="images-13.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
-                </div>
-                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
-                    <img src="images-12.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STOPKA -->
-    <footer id="kontakt" class="w-full border-t border-brand-border/60 bg-brand-bg py-8">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <img src="ISKRA_LOGO.png" alt="ISKRA" class="h-6 w-auto logo-blend opacity-70">
-                <span class="text-xs text-zinc-500">© 2026 ISKRA. All rights reserved.</span>
-            </div>
-            <div class="flex items-center gap-6 text-xs text-zinc-400">
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="hover:text-white transition-colors">Instagram</a>
-                <a href="mailto:kontakt@iskra.pl" class="hover:text-white transition-colors">Email</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SKRYPT PARALLAX SCROLL DLA LOGO W TLE -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const spark = document.getElementById('spark-bg');
-            if (!spark) return;
-
-            let targetScrollY = 0;
-            let currentScrollY = 0;
-
-            window.addEventListener('scroll', () => {
-                targetScrollY = window.scrollY;
-            });
-
-            function animate() {
-                currentScrollY += (targetScrollY - currentScrollY) * 0.06;
-                const translateY = currentScrollY * 0.18;
-                const rotation = currentScrollY * 0.02;
-
-                spark.style.transform = `translateY(${translateY}px) rotate(${-6 + rotation}deg)`;
-
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-        });
-    </script>
-
-</body>
-</html>
+                    <img src="images-13.jpeg" alt="Iskra Grillz"
