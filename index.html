@@ -72,9 +72,9 @@
     <!-- HERO SECTION Z DYNAMICZNYM SYMBOLEM W TLE -->
     <main class="flex-1 flex flex-col justify-center items-center px-6 py-28 text-center relative overflow-hidden">
         
-        <!-- OGROMNY SYMBOL W TLE (KONTENER I IKONA) -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[700px] md:w-[900px] aspect-square pointer-events-none select-none opacity-[0.08] z-0 flex items-center justify-center">
-            <img id="spark-bg" src="icon.png" alt="" class="w-full h-full object-contain logo-blend transform -rotate-6">
+        <!-- OGROMNY SYMBOL W TLE -->
+        <div class="absolute top-1/2 left-1/2 w-[550px] sm:w-[700px] md:w-[900px] aspect-square pointer-events-none select-none opacity-[0.08] z-0 flex items-center justify-center">
+            <img id="spark-bg" src="icon.png" alt="" class="w-full h-full object-contain logo-blend">
         </div>
 
         <!-- Subtelna poświata świetlna w tle -->
@@ -150,40 +150,28 @@
         </div>
     </footer>
 
-    <!-- SKRYPT PARALLAX (RUCH MYSZY I SCROLL) -->
+    <!-- SKRYPT PARALLAX SCROLL (TYLKO DLA PRZEWIJANIA) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const spark = document.getElementById('spark-bg');
             if (!spark) return;
 
-            let mouseX = 0, mouseY = 0;
-            let currentX = 0, currentY = 0;
-            let scrollY = 0;
+            let targetScrollY = 0;
+            let currentScrollY = 0;
 
-            // Śledzenie pozycji kursora
-            window.addEventListener('mousemove', (e) => {
-                const cx = window.innerWidth / 2;
-                const cy = window.innerHeight / 2;
-                mouseX = ((e.clientX - cx) / cx) * 30; // Max wychylenie 30px
-                mouseY = ((e.clientY - cy) / cy) * 30;
-            });
-
-            // Śledzenie scrollowania
             window.addEventListener('scroll', () => {
-                scrollY = window.scrollY;
+                targetScrollY = window.scrollY;
             });
 
-            // Pętla animacyjna (Ultra Smooth LERP)
             function animate() {
-                // Płynne dążenie do pozycji myszy
-                currentX += (mouseX - currentX) * 0.05;
-                currentY += (mouseY - currentY) * 0.05;
+                // Płynna bezwładność (LERP) przy przewijaniu
+                currentScrollY += (targetScrollY - currentScrollY) * 0.06;
 
-                // Przesunięcie i obrót na scroll
-                const scrollOffset = scrollY * 0.15;
-                const scrollRotation = scrollY * 0.02;
+                // Subtelny ruch w dół i delikatny obrót wraz ze scrollem
+                const translateY = currentScrollY * 0.18;
+                const rotation = currentScrollY * 0.02;
 
-                spark.style.transform = `translate3d(${currentX}px, ${currentY + scrollOffset}px, 0) rotate(${-6 + scrollRotation}deg)`;
+                spark.style.transform = `translate3d(-50%, calc(-50% + ${translateY}px), 0) rotate(${-6 + rotation}deg)`;
 
                 requestAnimationFrame(animate);
             }
