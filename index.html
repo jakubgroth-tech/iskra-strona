@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISKRA — Custom Grillz & Things</title>
+    <title>ISKRA — Custom Grillz &amp; Things</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonts: Syne & Inter -->
@@ -43,6 +43,20 @@
             filter: invert(1) brightness(1.8);
             mix-blend-mode: screen;
         }
+
+        /* Animacja nieskończonej taśmy (Marquee) */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 35s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-white selection:text-black min-h-screen flex flex-col justify-between">
@@ -59,7 +73,7 @@
             <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-zinc-400 font-medium">
                 <a href="#grillz" class="hover:text-white transition-colors">01 / Custom Grillz</a>
                 <a href="#things" class="hover:text-white transition-colors">02 / Things</a>
-                <a href="#drops" class="hover:text-white transition-colors">03 / Drops</a>
+                <a href="#community" class="hover:text-white transition-colors">03 / On Street</a>
             </nav>
 
             <!-- Przycisk Kontakt -->
@@ -84,7 +98,7 @@
             
             <!-- Podtytuł -->
             <p class="text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 mb-6 font-semibold">
-                Custom Grillz & Jewelry Design
+                Custom Grillz &amp; Jewelry Design
             </p>
 
             <!-- Główny nagłówek -->
@@ -120,7 +134,7 @@
 
             <div id="things" class="p-6 rounded-xl border border-brand-border bg-brand-card/30 backdrop-blur-sm hover:border-zinc-500 transition-all">
                 <span class="text-xs font-mono text-zinc-500">02 / E-COMMERCE DROP</span>
-                <h3 class="font-display text-lg font-bold text-white mt-2 mb-2">Sygnety & Wisiorki</h3>
+                <h3 class="font-display text-lg font-bold text-white mt-2 mb-2">Sygnety &amp; Wisiorki</h3>
                 <p class="text-xs text-zinc-400 leading-relaxed">
                     Powielalna baza gotowej biżuterii, odlewów i akcesoriów dostępna do bezpośredniego zakupu online.
                 </p>
@@ -136,6 +150,72 @@
         </div>
     </main>
 
+    <!-- SEKCJA PŁYNNEJ TAŚMY Z FOTKAMI (ON STREET / COMMUNITY) -->
+    <section id="community" class="w-full py-20 border-t border-brand-border/40 overflow-hidden relative">
+        <div class="max-w-6xl mx-auto px-6 mb-8 flex justify-between items-end">
+            <div>
+                <span class="text-xs font-mono text-zinc-500">04 / COMMUNITY</span>
+                <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-1">On Street</h2>
+            </div>
+            <p class="text-xs text-zinc-500 uppercase tracking-widest hidden sm:block">Nasi ludzie / Real projects</p>
+        </div>
+
+        <!-- TAŚMA PRZESUWAJĄCA SIĘ W POZIOMIE -->
+        <div class="w-full overflow-hidden flex relative">
+            <!-- Maski przyciemniające brzegowe -->
+            <div class="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-[#0a0a0b] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-l from-[#0a0a0b] to-transparent z-10 pointer-events-none"></div>
+
+            <div class="animate-marquee flex gap-4">
+                <!-- ZESTAW ZDJĘĆ (SERIA 1) -->
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="FOTO_1.jpg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-9.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-10.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-11.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-14.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-13.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-12.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+
+                <!-- DUPLIKAT DLA ZAPEWNIENIA PŁYNNEJ PĘTLI -->
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="FOTO_1.jpg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-9.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-10.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-11.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-14.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-13.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="w-64 h-80 rounded-xl overflow-hidden border border-brand-border/60 bg-brand-card flex-shrink-0 group">
+                    <img src="images-12.jpeg" alt="Iskra Grillz" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- STOPKA -->
     <footer id="kontakt" class="w-full border-t border-brand-border/60 bg-brand-bg py-8">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -150,7 +230,7 @@
         </div>
     </footer>
 
-    <!-- SKRYPT PARALLAX SCROLL (TYLKO DLA PRZEWIJANIA) -->
+    <!-- SKRYPT PARALLAX SCROLL FOR BACKGROUND ICON -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const spark = document.getElementById('spark-bg');
@@ -164,10 +244,7 @@
             });
 
             function animate() {
-                // Płynna bezwładność (LERP) przy przewijaniu
                 currentScrollY += (targetScrollY - currentScrollY) * 0.06;
-
-                // Subtelny ruch w dół i delikatny obrót wraz ze scrollem
                 const translateY = currentScrollY * 0.18;
                 const rotation = currentScrollY * 0.02;
 
