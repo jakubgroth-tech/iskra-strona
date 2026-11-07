@@ -38,7 +38,7 @@
             background-color: #0a0a0b;
             color: #e2e8f0;
         }
-        /* Konwersja czarnego logo z białym tłem na jasne srebro */
+        /* Konwersja czarnego logo/ikony z białym tłem na jasne srebro */
         .logo-blend {
             filter: invert(1) brightness(1.8);
             mix-blend-mode: screen;
@@ -69,9 +69,15 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <main class="flex-1 flex flex-col justify-center items-center px-6 py-24 text-center relative overflow-hidden">
-        <!-- Subtelne źródło światła w tle -->
+    <!-- HERO SECTION Z GIGANTYCZNYM SYMBOLEM W TLE -->
+    <main class="flex-1 flex flex-col justify-center items-center px-6 py-28 text-center relative overflow-hidden">
+        
+        <!-- OGROMNA PRZEZROCZYSTA ISKRA W TLE HERO -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[700px] md:w-[900px] aspect-square pointer-events-none select-none opacity-[0.07] z-0 flex items-center justify-center">
+            <img src="icon.png" alt="" class="w-full h-full object-contain logo-blend transform -rotate-6">
+        </div>
+
+        <!-- Subtelna poświata świetlna w tle -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-3xl mx-auto relative z-10 flex flex-col items-center">
@@ -103,8 +109,8 @@
         </div>
 
         <!-- SEKCJA KATEGORII -->
-        <div class="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-32 text-left">
-            <div id="grillz" class="p-6 rounded-xl border border-brand-border bg-brand-card/30 hover:border-zinc-500 transition-all">
+        <div class="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-32 text-left relative z-10">
+            <div id="grillz" class="p-6 rounded-xl border border-brand-border bg-brand-card/30 backdrop-blur-sm hover:border-zinc-500 transition-all">
                 <span class="text-xs font-mono text-zinc-500">01 / VISUAL IDENTITY</span>
                 <h3 class="font-display text-lg font-bold text-white mt-2 mb-2">Custom Grillz</h3>
                 <p class="text-xs text-zinc-400 leading-relaxed">
@@ -112,7 +118,7 @@
                 </p>
             </div>
 
-            <div id="things" class="p-6 rounded-xl border border-brand-border bg-brand-card/30 hover:border-zinc-500 transition-all">
+            <div id="things" class="p-6 rounded-xl border border-brand-border bg-brand-card/30 backdrop-blur-sm hover:border-zinc-500 transition-all">
                 <span class="text-xs font-mono text-zinc-500">02 / E-COMMERCE DROP</span>
                 <h3 class="font-display text-lg font-bold text-white mt-2 mb-2">Sygnety & Wisiorki</h3>
                 <p class="text-xs text-zinc-400 leading-relaxed">
@@ -120,7 +126,7 @@
                 </p>
             </div>
 
-            <div id="drops" class="p-6 rounded-xl border border-brand-border bg-brand-card/30 hover:border-zinc-500 transition-all">
+            <div id="drops" class="p-6 rounded-xl border border-brand-border bg-brand-card/30 backdrop-blur-sm hover:border-zinc-500 transition-all">
                 <span class="text-xs font-mono text-zinc-500">03 / SPECIAL PROJECTS</span>
                 <h3 class="font-display text-lg font-bold text-white mt-2 mb-2">Artist Collaborations</h3>
                 <p class="text-xs text-zinc-400 leading-relaxed">
