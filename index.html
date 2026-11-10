@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" class="dark">
+<html lang="pl" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,8 +76,8 @@
                 <a href="#drops" class="hover:text-white transition-colors">03 / Collaborations</a>
             </nav>
 
-            <!-- Przycisk Kontakt -->
-            <a href="#kontakt" class="text-xs uppercase tracking-wider font-semibold border border-brand-border px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition-all">
+            <!-- Przycisk Kontakt (Mailto) -->
+            <a href="mailto:iskrablings@gmail.com" class="text-xs uppercase tracking-wider font-semibold border border-brand-border px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition-all">
                 Kontakt
             </a>
         </div>
@@ -117,7 +117,7 @@
 
             <!-- Przyciski akcji -->
             <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="#kontakt" class="bg-white text-black text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-zinc-200 transition-all text-center">
+                <a href="mailto:iskrablings@gmail.com?subject=Zapytanie%20o%20projekt%20Custom" class="bg-white text-black text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-zinc-200 transition-all text-center">
                     Stwórz własny projekt
                 </a>
                 <a href="#things" class="border border-brand-border text-white text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white/5 transition-all text-center">
@@ -237,43 +237,4 @@
     <footer id="kontakt" class="w-full border-t border-brand-border/60 bg-brand-bg py-8">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3">
-                <img src="ISKRA_LOGO.png" alt="ISKRA" class="h-6 w-auto logo-blend opacity-70">
-                <span class="text-xs text-zinc-500">© 2026 ISKRA. All rights reserved.</span>
-            </div>
-            <div class="flex items-center gap-6 text-xs text-zinc-400">
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="hover:text-white transition-colors">Instagram</a>
-                <a href="mailto:kontakt@iskra.pl" class="hover:text-white transition-colors">Email</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- BEZPIECZNY SKRYPT PARALLAX SCROLL DLA WARSTWY WEWNĘTRZNEJ -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sparkAnim = document.getElementById('spark-anim');
-            if (!sparkAnim) return;
-
-            let targetScrollY = 0;
-            let currentScrollY = 0;
-
-            window.addEventListener('scroll', () => {
-                targetScrollY = window.scrollY;
-            });
-
-            function animate() {
-                currentScrollY += (targetScrollY - currentScrollY) * 0.06;
-                const translateY = currentScrollY * 0.18;
-                const rotation = currentScrollY * 0.02;
-
-                // Czysty, standardowy translate3d bez zbędnych przeliczeń procentowych
-                sparkAnim.style.transform = `translate3d(0, ${translateY}px, 0) rotate(${-6 + rotation}deg)`;
-
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-        });
-    </script>
-
-</body>
-</html>
+                <img src
